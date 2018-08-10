@@ -1,0 +1,30 @@
+db:
+  name: user
+
+server:
+  port: 8080
+  context-path: /api
+
+user-service:
+  ribbon:
+    listOfServers: localhost:8081
+
+todo-service:
+  ribbon:
+    listOfServers: localhost:8082
+
+
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  ignoredServices: '*'
+  debug:
+    request: true
+  routes:
+    user:
+      path: /users/**
+      serviceId: user-service
+      stripPrefix: false
+    todos:
+      path: /todos/**
+      serviceId: todo-service
+      stripPrefix: false
