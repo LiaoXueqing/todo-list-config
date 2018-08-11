@@ -1,12 +1,3 @@
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: none
-  datasource:
-    url: jdbc:mysql://localhost:3306/${db.name}
-    username: root
-    password: password
-
 logging:
   level:
     org:
