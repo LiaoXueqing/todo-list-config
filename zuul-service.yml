@@ -8,12 +8,11 @@ ribbon:
 
 user-service:
   ribbon:
-    listOfServers: localhost:8081
+    listOfServers: user-service:8081
 
 todo-service:
   ribbon:
-    listOfServers: localhost:8082
-
+    listOfServers: todo-service:8082
 
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
